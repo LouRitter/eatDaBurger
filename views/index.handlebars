@@ -1,0 +1,73 @@
+<div class="container">
+	<div class="jumbotron">
+		<h1>EAT DA BURGER</h1>
+		<h3>The best burger stop in the world</h3>
+	</div>
+	<div class="row">
+
+		<div class="col-lg-12">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong>Add Burger</strong></h3>
+				</div>
+				<div class="panel-body">
+					<form action="/burgers" method="POST">
+					
+						<div class="form-group">
+							<label for="">Name</label>
+							<input type="text" class="form-control" name="name" value="" placeholder="">
+						</div>
+
+					<br>
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary btn-md" id="addBtn"></span><span class="glyphicon glyphicon-fire"></span> Add burger</button>
+					</div>
+					</form>
+				</div>
+			</div>
+
+		</div>			
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title"><strong>Uneaten Burgers</strong></h1>
+				</div>
+				{{#each x}}
+				<div class="panel-body" id="burgerSection">
+					<div class="panel panel-default">
+ 						 <div class="panel-body">
+ 						 	<div class= "col-md-6">
+   								<h3>{{this.burger_name}}</h3>
+   							</div>
+   							<div class= "col-md-6">
+   								<form action="/eaten" method="POST">
+   									<button type="button" class="btn btn-success" name={{this.id}}> EAT ME!</button>
+   								</form>
+   							</div>
+  						 </div>
+					</div>	
+				</div>
+				{{/each}}
+			</div>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong>Eaten Burgers</strong></h3>
+				</div>
+				<div class="panel-body" id="wellSection">
+					{{eat}}
+					<p></p>
+					}
+				</div>
+			</div>
+		</div>			
+	</div>	
+</div>
